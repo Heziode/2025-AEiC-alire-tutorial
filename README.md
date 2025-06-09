@@ -4,7 +4,7 @@ Materials for the Alire tutorial at AEiC'25:
 
 - [Intro slides](https://Heziode.github.io/2025-AEiC-alire-tutorial/slides)
 - [Exercises](https://Heziode.github.io/2025-AEiC-alire-tutorial/exercises)
-- [Wordle exercise](https://Heziode.github.io/2025-AEiC-alire-tutorial/wordle-exercise.md)
+- [Wordle exercise](https://github.com/Heziode/2025-AEiC-alire-tutorial/blob/main/wordle-exercise.md)
 
 ## For devs / presenter
 

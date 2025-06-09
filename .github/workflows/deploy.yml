@@ -32,7 +32,7 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build:clean --base /${{github.event.repository.name}}/ slides.md exercises.md
+        run: nr build:clean --base /${{github.event.repository.name}}/ slides.md exercises.md --per-slide
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

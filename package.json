@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build slides.md exercises.md",
+    "build:clean": "slidev build",
     "dev": "slidev --open",
     "dev:exercises": "slidev --open exercises.md",
     "export": "slidev export"

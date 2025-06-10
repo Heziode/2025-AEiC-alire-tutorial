@@ -5,6 +5,10 @@ class: text-center
 
 # Dependency-related
 
+<!--
+Let's look at the dependency management improvements.
+-->
+
 ---
 layout: default
 ---
@@ -25,6 +29,16 @@ keypadder  0.3.0    Programmable virtual keypad for your Linux    Long_Descripti
                     desktop
 umwi       0.1.0    Unicode Monospace Width Information           Tag
 ```
+
+<!--
+The search functionality has been enhanced significantly in version 2.1.
+
+When you search for libraries, you now get a detailed breakdown of where the matches were found, whether in the description, name, tags, or website.
+
+This makes it much easier to find what you're looking for when you have partial information.
+
+In version 1.0 it only searching in name and short description.
+-->
 
 ---
 
@@ -58,4 +72,10 @@ $ alr show ada_toml --dependents=all
 # Every dependency path for every dependent
 ```
 
----
+<!--
+A really powerful new feature is the ability to find dependents of a crate.
+
+You can see direct dependents with `alr show --dependents=direct`, find the shortest dependency path to every dependent, or get a complete view of all dependency paths.
+
+This is incredibly useful for understanding the impact of changes to your crate and for discovering who's using your code.
+-->

@@ -5,6 +5,10 @@ class: text-center
 
 # Ecosystem
 
+<!--
+Now let's look at the current state of the Alire ecosystem.
+-->
+
 ---
 layout: default
 ---
@@ -33,6 +37,17 @@ layout: default
 
 **Almost 139k downloads:** https://hanadigital.github.io/grev/?user=alire-project&repo=alire
 
+<!--
+We currently have 550 crates in the index, contributed by 134 different authors, with more than 1,4k releases.
+
+The ecosystem has a strong focus on embedded development.
+We have 107 crates tagged as `embedded`, and 18 specifically for `SPARK`.
+
+Looking at the most popular tags, you can see that `embedded` leads with 107 crates, followed by `nostd` with 33, and `a0b`, that's an Ada embedded framework with 32 crates.
+
+We also have good multiples crates in web development, databases, and gaming. The ecosystem has seen more than 140,000 downloads total, which you can track at the GitHub repository statistics.
+-->
+
 ---
 
 # New Platforms
@@ -45,3 +60,11 @@ layout: default
 - **SUSE/openSUSE/zypper** (John Serock)
   - Docker image needed
 - **FreeBSD** (Stephane Carrez)
+
+<!--
+We've also expanded platform support.
+
+Platform support has been added for Homebrew and MacPorts on macOS, specifically for x86_64 architecture, with contributions that were provided by the late Simon Wright.
+
+Untested support, meaning continuous integration workflows haven't been established for them yet, has been added for SUSE and openSUSE with zypper package manager, contributed by John Serock, and FreeBSD support thanks to Stephane Carrez.
+-->

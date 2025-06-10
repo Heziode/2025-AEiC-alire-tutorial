@@ -31,6 +31,16 @@ layout: default
   </div>
 </div>
 
+<!--
+Let's start by putting Alire in context. Package managers are everywhere in modern software development.
+
+You've probably used npm for JavaScript, pip for Python, or Cargo for Rust.
+
+Maybe you also used APT-Get package manager for Debian based system.
+
+Each language ecosystem (and UNIX based OS) has evolved its own solution for managing dependencies and distributing libraries.
+-->
+
 ---
 layout: default
 ---
@@ -48,10 +58,11 @@ layout: default
 
 </div>
 
-<!-- 
-
-<p class="text-sm opacity-80">Alire is designed for regular users (not system administrators),<br>tailored specifically to the Ada/SPARK language ecosystem,<br>primarily deals with source distribution, and<br>is a community-driven project rather than an official Ada standard.</p>
-
+<!--
+Alire is designed for regular users (not system administrators),
+tailored specifically to the Ada/SPARK language ecosystem,
+primarily deals with source distribution, and
+is a community-driven project rather than an official Ada standard.
 -->
 
 ---
@@ -85,6 +96,14 @@ layout: default
     <p class="text-sm !mt-0 opacity-80">https://github.com/alire-project</p>
   </a>
 </div>
+
+<!--
+So what is Alire? The name stands for Ada Library Repository.
+The project consists of two main components:
+
+- The Alire project as a whole, which includes the community index - that's our collection of available packages, which we call 'crates' (like in Cargo with Rust)
+- and 'alr', the command-line tool that handles dependency solving, source downloading, and building. You can find everything at the GitHub organization I'm showing here.
+-->
 
 ---
 layout: center
@@ -140,4 +159,10 @@ layout: center
   }
 ]" />
 
----
+<!--
+Alire has been in development for quite a while.
+It all started back in February 2016 with the first repository and discussions that began at Ada-Europe 2016.
+The project was presented at Ada-Europe 2018, got AdaCore sponsorship in 2019, and launched the website.
+After some years of development, the project released version 1.0 in February 2021.
+Since then, the project had several incremental releases, with the major 2.0 release in March 2024, and most recently version 2.1 in March of this year.
+-->

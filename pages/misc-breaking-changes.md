@@ -5,6 +5,10 @@ class: text-center
 
 # Miscellanea
 
+<!--
+Let's cover some additional improvements and changes.
+-->
+
 ---
 layout: default
 ---
@@ -22,6 +26,16 @@ layout: default
 
 </v-clicks>
 
+<!--
+We've made several improvements to how indexes are handled.
+
+Indexes are now loaded on demand and piecemeal, which decreases latency for many commands.
+
+The community index is refreshed automatically once a day, though it asks for permission on first refresh.
+
+And indexes can now be accessed over SSH with Git, thanks to contributions from Daly Brown and Rowal Walshe.
+-->
+
 ---
 
 # Breaking Changes
@@ -38,6 +52,16 @@ layout: default
   - Use `alr install` (or `alr get` for the old behavior)
 
 </v-clicks>
+
+<!--
+There are some breaking changes to be aware of.
+
+Unicode is now enabled by default with the `-gnatW8` switch, meaning UTF-8 encoded sources are created and expected.
+
+Cache locations have changed, so you'll need to manually clean up the old `~/.config/alire/` directory.
+
+And toolchain export has been moved from `alr toolchain` to `alr install` - the old install/uninstall/install-dir switches are gone.
+-->
 
 ---
 
@@ -57,3 +81,9 @@ layout: default
   ```
 
 For more details about new features, see [user-changes documentation](https://github.com/alire-project/alire/blob/master/doc/user-changes.md)
+
+<!--
+Looking ahead to version 2.1, we're introducing a new `--format` global switch that produces structured output in JSON, TOML, or YAML format.
+
+This works with commands like `index`, `search`, and `show`, making Alire much more scriptable and integration-friendly.
+-->

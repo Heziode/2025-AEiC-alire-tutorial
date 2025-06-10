@@ -5,6 +5,10 @@ class: text-center
 
 # Shared Builds
 
+<!--
+Now let's discuss one of the biggest architectural changes: shared builds.
+-->
+
 ---
 layout: default
 ---
@@ -33,6 +37,13 @@ myprogram.gpr
 src
   myprogram.adb
 ```
+
+<!--
+Previously, when you added dependencies to a project, they would be built locally in a cache directory within your project.
+
+This meant every project had its own copy of compiled dependencies, even if multiple projects used the same versions of the same crates.
+-->
+
 ---
 
 # New Default Behavior
@@ -53,6 +64,12 @@ myprogram.gpr
 src
   myprogram.adb
 ```
+
+<!--
+Now, with shared builds enabled by default, your project directory stays clean.
+
+Dependencies are now built in a shared location and reused across projects. This saves significant disk space and build time.
+-->
 
 ---
 
@@ -75,6 +92,14 @@ $HOME/.local/share/alire/
   ├── hello_1.0.2_5715870b      # downloaded just once,
   └── libhello_1.0.1_3c15bc7    # kept pristine.
 ```
+
+<!--
+Here's how the shared build system is organized. There's a `vault` of read-only releases that are downloaded just once and kept clean.
+
+Then there are shared build locations, with unique configuration hashes for each build variant.
+
+This ensures that different build configurations don't interfere with each other.
+-->
 
 ---
 
@@ -100,6 +125,17 @@ switches:hello=-O3,-fdata-sections,-ffunction-sections,-g,
 <strong>ALI for builds</strong> - unique hash based on all build inputs
 </div>
 
+<!--
+The build hash is computed from all build inputs: 
+
+- dependencies
+- external variables
+- build profiles
+- and compiler switches.
+
+This is like having ALI files for builds, it ensures that any change in build configuration results in a separate build directory.
+-->
+
 ---
 
 # Shared Builds Environment
@@ -122,6 +158,12 @@ $HOME/.local/share/alire/builds/libhello_1.0.1_3c15bc7f/eb3958dc41730:/tmp/a/myp
 - VAULT → BUILD sync is delayed until build time
 - post-fetch is run only once after sync, not on fetch
 </div>
+
+<!--
+The implication of this design is that the hash cannot be computed until all build inputs are known.
+
+This means the synchronization from vault to build directory is delayed until build time, and post-fetch actions are run only once after sync, not on initial fetch.
+-->
 
 ---
 
@@ -149,4 +191,10 @@ toolchain folder:  ~/.local/share/alire/toolchains
 By default, `alr` stores its global settings at `<user home>/.config/alire`. You can use any other location by setting in the environment the variable `ALIRE_SETTINGS_DIR=</absolute/path/to/settings/folder>`, or by using the global `-s` switch: `alr -s </path/to/settings> <command>`
 </div>
 
----
+<!--
+Here's where everything is stored by default.
+
+You can see the settings folder, cache folder, vault folder, build folder, and toolchain folder.
+
+The cache and toolchain folders can be relocated with settings, and you can override the global settings directory with an `environment variable` or `command-line switch`.
+-->
